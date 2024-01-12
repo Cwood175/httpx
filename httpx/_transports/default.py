@@ -23,19 +23,19 @@ client = httpx.Client(transport=transport)
 transport = httpx.HTTPTransport(uds="socket.uds")
 client = httpx.Client(transport=transport)
 """
-import contextlib
-import typing
 from types import TracebackType
+import typing
+import contextlib
 
 import httpcore
 
 from .._config import (
+    create_ssl_context,
     DEFAULT_LIMITS,
     DEFAULT_NETWORK_OPTIONS,
     Proxy,
     Limits,
     NetworkOptions,
-    create_ssl_context,
 )
 from .._exceptions import (
     ConnectError,
